@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import CoinDetail from '../views/CoinDetail'
 
 Vue.use(VueRouter)
 
@@ -10,6 +11,13 @@ const routes = [
     name: 'Home',
     component: Home
   },
+
+  {
+    path: '/coin/:id',
+    name: 'coin-detail',
+    component: CoinDetail
+  },
+
   {
     path: '/about',
     name: 'About',

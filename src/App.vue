@@ -1,12 +1,39 @@
+
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <main id="app">
+      <px-header :links="links"></px-header>
     <router-view/>
-  </div>
+  </main>
 </template>
+
+<script>
+import PxHeader from './components/PxHeader'
+
+export default {
+  name: 'app',
+  data () {
+    return {
+      links: [
+        {
+          title: 'BTC',
+          to: { name: 'coin-detail', params: { id: 'bitcoin' } }
+        },
+        {
+          title: 'ETH',
+          to: { name: 'coin-detail', params: { id: 'ethereum' } }
+        },
+        {
+          title: 'XRP',
+          to: { name: 'coin-detail', params: { id: 'ripple' } }
+        }
+      ]
+    }
+  },
+  components: {
+    PxHeader
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
